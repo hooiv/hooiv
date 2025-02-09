@@ -6,3 +6,6 @@
 - 🤔 I’m looking for help with malware development
 - 💬 Ask about me
 - 😄 Pronouns: He/Him
+
+- 
+![](https://komarev.com/ghpvc/?username=hooiv)
