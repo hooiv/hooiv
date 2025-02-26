@@ -9,3 +9,16 @@
 
 - 
 ![](https://komarev.com/ghpvc/?username=hooiv)
+
+## GitHub Stats
+
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=hooiv&show_icons=true&theme=radical)
+
+## Top Languages
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=hooiv&layout=compact&theme=radical)
+
+Feel free to explore my repos and collaborate!
+
+
+
