@@ -60,12 +60,12 @@ Backend Architecture -> Systems Thinking -> Assembly -> Performance Tuning
 ## GitHub Analytics
 
 <p align="center">
-	<img src="https://github-readme-stats.vercel.app/api?username=hooiv&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&hide_border=true&theme=transparent" alt="GitHub stats" height="170" />
+	<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=hooiv&theme=github" alt="GitHub stats" height="170" />
 	<img src="https://streak-stats.demolab.com?user=hooiv&hide_border=true&theme=transparent" alt="GitHub streak" height="170" />
 </p>
 
 <p align="center">
-	<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=hooiv&layout=compact&hide_border=true&theme=transparent" alt="Top languages" height="160" />
+	<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=hooiv&theme=github" alt="Top languages" height="160" />
 </p>
 
 ## Collaboration
