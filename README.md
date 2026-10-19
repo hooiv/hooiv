@@ -1,71 +1,93 @@
-# Aditya Chauhan
+<div align="center">
 
-`hooiv` — compiler optimization passes, CPU pipelines, Rust systems.
+# hooiv
 
-I work on the layer where a wrong assumption becomes a wrong answer: offload decisions, pipeline hazards, cache bounds, request routing. Most of it is C++, Rust, and Verilog. The rest is TypeScript, when a system needs a face.
+### Backend Engineer building fast, reliable systems
 
-Most of my merged work is in private repositories, so the public evidence is what's below.
+<p>
+	<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&pause=900&color=0E75B6&center=true&vCenter=true&width=900&lines=Designing+backend+systems+that+are+simple%2C+scalable%2C+and+secure.;Learning+assembly+to+think+closer+to+the+machine.;Shipping+code+that+is+measured%2C+maintainable%2C+and+production-ready." alt="Typing intro" />
+</p>
 
----
+<p>
+	<img src="https://komarev.com/ghpvc/?username=hooiv&label=Profile%20views&color=0e75b6&style=flat" alt="Profile views" />
+	<img src="https://img.shields.io/github/followers/hooiv?label=Followers&style=flat&color=0e75b6" alt="GitHub followers" />
+	<img src="https://img.shields.io/github/stars/hooiv?affiliations=OWNER&label=Total%20stars&style=flat&color=0e75b6" alt="GitHub stars" />
+	<img src="https://img.shields.io/badge/Focus-Backend%20Engineering-0e75b6?style=flat" alt="Backend focus" />
+</p>
 
-## Work
+</div>
 
-### [QuickLink](https://github.com/hooiv/urlshort) — routing, experiments, and attribution
+## High-Level Snapshot
 
-TypeScript · Next.js 16 · React 19 · Prisma · PostgreSQL · ~30k lines
+- I build backend services with strong attention to architecture, performance, and reliability.
+- I am currently deepening my low-level understanding through assembly and systems internals.
+- I enjoy solving hard engineering problems with clean, testable designs.
+- I collaborate on software projects that value craftsmanship and shipping quality.
 
-A multi-tenant link platform where routing, experiments, and conversion attribution are all decided per request, deterministically.
+## Engineering Profile
 
-- **Experiments are sticky.** Weighted arms are bucketed by a SHA-256 of the visitor, so the same person doesn't flip arms between clicks.
-- **Destinations are append-only.** Every change is a revision with a scheduled `effectiveAt`; releases roll back in one click, and history can't be rewritten.
-- **Attribution doesn't leak the click.** HMAC-signed conversion tokens travel in the URL fragment, so they never reach the destination server. A JS snippet and `QuickLink.track()` close the loop.
-- **Probes assume the destination is hostile.** Hostnames are DNS-resolved with private IPs blocked, every redirect hop is re-validated, and repeated failures trip a circuit breaker on a cron sweep.
-- Five tenant roles, email-bound expiring invites, hashed revocable API keys. Tested with vitest, Playwright, k6 load runs, and a `test:soak` suite against Redis and a read replica.
+| Dimension | How I work |
+| --- | --- |
+| System Design | Prefer clear service boundaries, resilient interfaces, and observable behavior |
+| Code Quality | Small units, meaningful naming, and maintainable abstractions |
+| Performance | Benchmark first, optimize second, verify always |
+| Security | Defensive defaults, least privilege, and explicit validation |
+| Mindset | Keep learning, keep refining, keep shipping |
 
-Not deployed publicly. The repository is the artifact.
+## Current Focus
 
-### [llvm-gpu-pass](https://github.com/hooiv/llvm-gpu-pass) — GPU offload decisions with a real cost model
+```text
+Backend Architecture -> Systems Thinking -> Assembly -> Performance Tuning
+```
 
-C++ · LLVM · ~6.5k lines
+## Stack and Tools
 
-An LLVM pass that decides whether a loop should run on the GPU. The decision comes from a per-architecture cost model, not from "this loop looks parallel."
+<p>
+	<img src="https://img.shields.io/badge/APIs-REST%20%26%20RPC-0e75b6?style=flat" alt="APIs" />
+	<img src="https://img.shields.io/badge/Databases-SQL%20%26%20NoSQL-0e75b6?style=flat" alt="Databases" />
+	<img src="https://img.shields.io/badge/Architecture-Distributed%20Systems-0e75b6?style=flat" alt="Architecture" />
+	<img src="https://img.shields.io/badge/Dev%20Practices-Testing%20%7C%20CI%2FCD%20%7C%20Observability-0e75b6?style=flat" alt="Practices" />
+</p>
 
-- Models NVIDIA Maxwell through Ampere, AMD Vega through RDNA2 and CDNA2, and Intel Xe LP/HPG/HPC, so the same loop can get different answers on different silicon.
-- Weighs computational intensity, available parallelism, memory access pattern, trip count, and transfer overhead before committing to an offload.
+## Principles I Ship By
 
-### [riscv](https://github.com/hooiv/riscv) — a five-stage RV32I core
+- Build for readability before cleverness.
+- Treat failure paths as first-class behavior.
+- Favor deterministic systems over hidden magic.
+- Make performance and reliability measurable.
+- Leave the codebase better than I found it.
 
-Verilog · RV32I
+## GitHub Analytics
 
-IF/ID/EX/MEM/WB, with a separate ALU, control unit, register file, hazard unit, and pipeline registers.
+<p align="center">
+	<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=hooiv&theme=github" alt="GitHub stats" height="170" />
+	<img src="https://streak-stats.demolab.com?user=hooiv&hide_border=true&theme=transparent" alt="GitHub streak" height="170" />
+</p>
 
-- Forwarding from EX/MEM and WB into EX, with load-use stalls inserted only where forwarding can't cover the gap; branches flush the pipeline.
-- `alu_tb.v` and `processor_tb.v` testbenches, plus synthesis scripts and SDC constraints targeting an Altera Cyclone IV at 50 MHz.
+<p align="center">
+	<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=hooiv&theme=github" alt="Top languages" height="160" />
+</p>
 
-## Also public
+## Collaboration
 
-**[llvm-tensor-opt](https://github.com/hooiv/llvm-tensor-opt)** — C++/CUDA, ~4.6k lines. LLVM passes for tensor fusion, vectorization, parallelization, and CUDA offload, with a PyTorch extension and a gtest suite.
+If you are building a product or platform and need strong backend execution, I am open to collaborating on meaningful work.
 
-**[redis-rate-limiter](https://github.com/hooiv/redis-rate-limiter)** — Python. A distributed token bucket as one atomic Redis Lua script: tiered policies, accurate `Retry-After`, async client, pytest suite, Docker.
+## Best Fit Projects
 
-## The revert I'd make again
+- API platforms and backend-heavy products
+- Internal developer tools and automation systems
+- Reliability and performance improvement initiatives
+- Projects that need architecture cleanup and scaling plans
 
-In [wordcraft](https://github.com/hooiv/wordcraft), a Rust word processor, I bounded the paragraph layout cache at 32,768 entries. 159 layout tests passed and `cargo xtask ci` was green. Then I reverted it myself: the existing prune already capped the cache at 4× the working set, and my new test never reached the cap, so the bound was unsound and unproven.
+## Working Style
 
-A test that can't fail when the change is wrong isn't evidence.
+```text
+Understand goals -> Design clearly -> Build incrementally -> Measure deeply -> Improve continuously
+```
 
-*(`wordcraft` is a snapshot of an upstream codebase. The cache change and its revert are mine.)*
+If you want to collaborate, open an issue or start a discussion in any relevant repository.
 
-## Stack
+> Build it clear. Measure it. Harden it. Scale it.
 
-<img alt="Rust" src="https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white"> <img alt="C++" src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white"> <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"> <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"> <img alt="Verilog" src="https://img.shields.io/badge/Verilog-8A2BE2?style=flat-square"> <img alt="LLVM" src="https://img.shields.io/badge/LLVM-262D3A?style=flat-square&logo=llvm&logoColor=white"> <img alt="CUDA" src="https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white">
 
-**Systems** — LLVM, CUDA, PyTorch extensions, Redis, PostgreSQL, Prisma.
 
-**Web and test** — Next.js, React, Tailwind, vitest, Playwright, k6, pytest, gtest, Docker.
-
-## Contact
-
-I don't publish an email address. The channel I actually read is an issue on any repository above.
-
-Happy to talk compiler passes, CPU design, or a Rust codebase that needs a second pair of eyes.
