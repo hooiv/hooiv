@@ -24,6 +24,9 @@
 - I enjoy solving hard engineering problems with clean, testable designs.
 - I collaborate on software projects that value craftsmanship and shipping quality.
 
+## Some slop I made or my ai made : 
+  - https://aimeeting.onrender.com/
+
 ## Engineering Profile
 
 | Dimension | How I work |
